@@ -1,5 +1,6 @@
 #ifndef _MONTY_H_
 #define _MONTY_H
+#define _POSIX_C_SOURCE 200809L
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -45,7 +46,7 @@ typedef struct instruction_s
  */
 typedef struct global_variable
 {
-	FILE* file;
+	FILE *file;
 	int push_arg;
 	char *buffer;
 } global_var;
@@ -57,4 +58,25 @@ void pint_(stack_t **stack, unsigned int line);
 void pop_(stack_t  **stack, unsigned int line);
 void nop_(stack_t **stack, unsigned int line);
 void swap_(stack_t **stack, unsigned int line);
+void rotl_(stack_t **stack, unsigned int line);
+void rotr_(stack_t **stack, unsigned int line);
+
+void read_file(char *filename, stack_t **stack);
+char *parse_line(char *line, stack_t **stack, unsigned int line_number);
+typedef void (*instruct_func)(stack_t **stack, unsigned int line_number);
+instruct_func get_op_func(char *str);
+
+void free_dlistint(stack_t *head);
+void dobfree(stack_t **stack);
+void dobfree2(stack_t **stack);
+int _isalpha(int c);
+
+void pchar_(stack_t **stack, unsigned int line);
+void pstr_(stack_t **stack, unsigned int line);
+
+void sub_(stack_t **stack, unsigned int line);
+void add_(stack_t **stack, unsigned int line);
+void mul_(stack_t **stack, unsigned int line);
+void div_(stack_t **stack, unsigned int line);
+void mod_(stack_t **stack, unsigned int line);
 #endif /*_MONTY_H*/
