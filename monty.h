@@ -52,9 +52,8 @@ typedef struct global_variable
 	char *buffer;
 } global_var;
 extern global_var var_global;
-
 void push_(stack_t **stack, unsigned int line);
-void pall_(stack_t **stack);
+void pall_(stack_t **stack, unsigned int line);
 void pint_(stack_t **stack, unsigned int line);
 void pop_(stack_t  **stack, unsigned int line);
 void nop_(stack_t **stack, unsigned int line);

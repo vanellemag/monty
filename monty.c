@@ -37,7 +37,7 @@ int main(int argc, char *argv[])
 				push_(&stack, value);
 			}
 			if (strncmp(p[0], "pall", 4) == 0)
-				pall_(&stack);
+				pall_(&stack, lenline);
 			if (strncmp(p[0], "pint", 4) == 0)
 				pint_(&stack, lenline);
 			if (strncmp(p[0], "pop", 3) == 0)

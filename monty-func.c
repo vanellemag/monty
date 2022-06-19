@@ -4,7 +4,7 @@
  * @stack: pointer to linked list stack
  *
  */
-void pall_(stack_t **stack)
+void pall_(stack_t **stack, __attribute__((unused)) unsigned int line_number)
 {
 	while (*stack != NULL)
 	{
@@ -47,5 +47,5 @@ void pop_(stack_t **stack, unsigned int line_number)
 	*stack = nodo->next;
 	if (*stack != NULL)
 		(*stack)->prev = NULL;
-	/**free(nodo);**/
+	free(nodo);
 }
