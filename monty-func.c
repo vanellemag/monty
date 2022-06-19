@@ -2,7 +2,7 @@
 /**
  * pall_ - print all function
  * @stack: pointer to linked list stack
- *
+ *@line_number: int
  */
 void pall_(stack_t **stack, __attribute__((unused)) unsigned int line_number)
 {
