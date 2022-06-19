@@ -1,6 +1,7 @@
 #ifndef _MONTY_H_
 #define _MONTY_H
 #define _POSIX_C_SOURCE 200809L
+#define _GNU_SOURCE
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -53,7 +54,7 @@ typedef struct global_variable
 extern global_var var_global;
 
 void push_(stack_t **stack, unsigned int line);
-void pall_(stack_t **stack, unsigned int line);
+void pall_(stack_t **stack);
 void pint_(stack_t **stack, unsigned int line);
 void pop_(stack_t  **stack, unsigned int line);
 void nop_(stack_t **stack, unsigned int line);
